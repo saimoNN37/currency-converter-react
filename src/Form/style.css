@@ -1,0 +1,30 @@
+.form{
+    margin-top: 30px;
+}
+
+.form__fieldset{
+    background-color: white;
+    border-radius: 15px; 
+    border: none;
+    box-shadow: rgba(156, 146, 156, 50);
+}
+
+.form__legend{
+    border-radius: 5px;
+    background-color: #025252;
+    color: white;
+    padding: 5px;
+}
+.form__labelText{
+    display: inline-block;
+    max-width: 150px;
+    width: 100%;
+    margin-right: 10px;
+}
+.form__field{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 300px;
+}
