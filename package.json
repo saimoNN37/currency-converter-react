@@ -2,7 +2,7 @@
   "name": "currency-converter-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://saimonn37.github.io/Currency-converter/",
+  "homepage": "https://saimonn37.github.io/currency-converter-react/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
