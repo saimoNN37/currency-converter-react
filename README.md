@@ -1,5 +1,5 @@
 # Currency Converter
-[![CurrencyConverter](https://i.postimg.cc/DmVV4VCg/Zrzut-ekranu-2023-02-09-161459.png)](https://postimg.cc/YLxDTPBG)
+[![CurrencyConverter](https://i.postimg.cc/bJMjxSCp/Kalkulator.png)]
 ## Description
 It is simple Currency Calculator where you can calculate from PLN to USD, CHF, GBP. Calculator is in Polish language.
 ## DEMO
