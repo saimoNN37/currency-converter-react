@@ -2,6 +2,7 @@ import "./style.css";
 import { currencies } from "../currencies";
 import { useState } from "react";
 import Result from "../Result";
+import Clock from "../Clock";
 
 const Form = () => {
 
@@ -10,9 +11,11 @@ const Form = () => {
     const rate = currencies.find(({ short }) => short === currency).rate;
 
     return (
+        
         <form className="form">
             <fieldset className="form__fieldset">
                 <legend className="form__legend">Kalkulator Walut</legend>
+                <Clock />
                 <p>
                     <label className="form__label">
                         <span className="form__labelText">Kwota w PLN</span>
