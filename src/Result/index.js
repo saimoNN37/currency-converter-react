@@ -1,11 +1,16 @@
 import { StyledResult } from "./styled";
 
-const Result = ({amount, currency, rate}) => {
-    const result = amount / rate;
-
-    return (
-        <StyledResult>{result.toFixed(2)} {currency}</StyledResult>
-    )
+export const Result = ({ result }) => {
+    <StyledResult>
+        {result !== undefined && (
+            <>
+                {result.startAmount.toFixed(2)};
+                <strong>
+                    {result.finalAmount.toFixed(2)}&nbsp;{result.currency}
+                </strong>
+            </>
+        )}
+    </StyledResult>
 };
 
 export default Result;

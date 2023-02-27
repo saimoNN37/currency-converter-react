@@ -1,21 +1,48 @@
-import { currencies } from "../currencies";
 import { useState } from "react";
 import Result from "../Result";
 import Clock from "../Clock";
 import { Box, Field, Fieldset, LabelText, Legend } from "./styled";
+import { useDownloadRates } from "./useDownloadRates";
 
 const Form = () => {
+    const ratesData = useDownloadRates();
 
-    const [amount, setAmount] = useState("");
-    const [currency, setCurrency] = useState(currencies[0].short);
-    const rate = currencies.find(({ short }) => short === currency).rate;
+    const [amount, setAmount] = useState('EUR');
+    const [currency, setCurrency] = useState('');
+    const [result, setResult] = useState('');
+
+    const calculateResult = (currency, amount) => {
+        const rate = ratesData.rates[currency];
+
+        setResult({
+            currency,
+            startAmount: +amount,
+            finalAmount: amount * rate,
+        });
+    };
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+        calculateResult(currency, amount);
+    };
 
     return (
 
-        <Box>
+        <Box onSubmit={onFormSubmit}>
             <Fieldset>
                 <Legend>Kalkulator Walut</Legend>
                 <Clock />
+                {ratesData.state === "loading"
+                    ? (
+                        <div>Chwileczke...⏳  <strong>Ładuję aktualne kursy walut z Europejskiego Banku Centralnego ⏳ </strong>
+                        </div>
+                    )
+                    : (
+                        ratesData.state === "error" ? (
+                            <div>
+                                Kursy walut nie pobrały się 😐 . Sprawdź swoje połączenie internetowe 😐
+                            </div>
+                        ) : (
+                            <>
                 <p>
                     <label>
                         <LabelText>Kwota w PLN</LabelText>
@@ -37,23 +64,21 @@ const Form = () => {
                             value={currency}
                             onChange={({ target }) => setCurrency(target.value)}
                         >
-                            {currencies.map((currency) => (
-                                <option
-                                    value={currency.short}
-                                    key={currency.short}
-                                >
-                                    {currency.name}
+                            {Object.keys(ratesData.rates).map((currency) => (
+                                <option key={currency} value={currency}>
+                                    {currency}
                                 </option>
                             ))}
                         </Field>
                     </label>
                 </p>
+                <button>Przelicz</button>
                 <p>Kurs walut z dnia 28.12.2022</p>
                 <Result
-                    amount={amount}
-                    currency={currency}
-                    rate={rate}
+                    result={result}
                 />
+                </>
+                        ))}
             </Fieldset>
         </Box>
     );

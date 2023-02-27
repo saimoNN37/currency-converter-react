@@ -32,3 +32,11 @@ export const Field = styled.input`
     width: 100%;
     max-width: 300px;
 `;
+
+export const Loading = styled.p`
+  color: black;
+`;
+
+export const Failure = styled.p`
+  color: crimson;
+`;
