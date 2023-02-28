@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export const useDownloadRates = () => {
-    const [ratesData, setRatesData] = useState({ state: "Loading" });
+    const [ratesData, setRatesData] = useState({ state: "loading" });
 
     useEffect(() => {
         const fetchRates = async () => {

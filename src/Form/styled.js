@@ -11,6 +11,16 @@ export const Fieldset = styled.fieldset`
     box-shadow: rgba(156, 146, 156, 50);
 `;
 
+export const Button = styled.button`
+    width: 100%;
+    border: none;
+    color: white;
+    background-color: hsl(180, 94%, 27%);
+    padding: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+`;
+
 export const Legend = styled.legend`
     border-radius: 5px;
     background-color: #025252;
