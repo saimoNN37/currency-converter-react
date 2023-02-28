@@ -11,6 +11,7 @@ export const useDownloadRates = () => {
                 setRatesData({
                     state: "success",
                     rates: response.data.rates,
+                    date: response.data.date,
                 });
             }
             catch (error) {

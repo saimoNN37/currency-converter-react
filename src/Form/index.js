@@ -73,7 +73,7 @@ const Form = () => {
                                 </label>
                             </p>
                             <Button>Przelicz</Button>
-                            <p>Kurs walut z dnia 28.12.2022</p>
+                            <p>Kurs walut z dnia {ratesData.date}</p>
                            <Result result={result}/>
                         </>
                     ))}
