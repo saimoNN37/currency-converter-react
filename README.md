@@ -1,7 +1,7 @@
 # Currency Converter
-![CurrencyConverter](https://i.postimg.cc/bJMjxSCp/Kalkulator.png)
+![CurrencyConverter](https://i.postimg.cc/gkmwcfgR/Zrzut-ekranu-2023-03-01-072233.png)
 ## Description
-It is simple Currency Calculator where you can calculate from PLN to USD, CHF, GBP. Calculator is in Polish language.
+It is simple Currency Calculator where you can calculate from PLN to all currencies because they are collected from central bank. Calculator is in Polish language.
 ## DEMO
 https://saimonn37.github.io/currency-converter-react/
 ## Used Technologies
@@ -15,6 +15,7 @@ https://saimonn37.github.io/currency-converter-react/
 - Markdown
 - React
 - Creat-react-app
+- API
 
 # Getting Started with Create React App
 
